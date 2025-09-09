@@ -1,0 +1,18 @@
+# Compilados
+/bin/
+/build/
+/out/
+/dist/
+*.class
+
+# Configuración de IDEs
+.settings/
+.classpath
+.project
+.idea/
+*.iml
+nbproject/private/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
