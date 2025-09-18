@@ -141,18 +141,41 @@ public class IterTabellarium {
 			while(contador<lista1.size()){
 				while(recorrido<lista2.size()) {
 					if(lista1.get(contador).equals(lista2.get(recorrido))) {
-						comprobante++;
+						comprobante++;	//This is allows to know if there is at least one time that there are equals values.
 					}
 					recorrido++;
 				}
-				if(comprobante==0) {
+				if(comprobante==0) {	//If there are not equal values "comprobante" will be 0, so we can add that value to our new list.
 					listaFinal.add(lista1.get(contador));
 				}
 				contador++;
 				recorrido=0;
 				comprobante=0;
 			}
+			
+			// Now we have to do the same the other way.
+			contador=0;
+			recorrido=0;
+			while(contador<lista2.size()){
+				while(recorrido<lista1.size()) {
+					if(lista2.get(contador).equals(lista1.get(recorrido))) {
+						comprobante++;	//This is allows to know if there is at least one time that there are equals values.
+					}
+					recorrido++;
+				}
+				if(comprobante==0) {	//If there are not equal values "comprobante" will be 0, so we can add that value to our new list.
+					listaFinal.add(lista2.get(contador));
+				}
+				contador++;
+				recorrido=0;
+				comprobante=0;
+			}
+		} else if (lista1.isEmpty() && !lista2.isEmpty()) {
+			listaFinal=lista2;
+		} else if(lista2.isEmpty() && !lista1.isEmpty()) {
+			listaFinal=lista1;
 		}
+		
 		return listaFinal;
 	}
 	
